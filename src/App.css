@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap");
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 96vh;
+  background-color: rgb(216, 194, 146);
+  background-attachment: fixed;
+}
+
+.begin-btn {
+  font: 600 500% / 1 "Nunito", sans-serif;
+  outline: none;
+  border: 0;
+  border-radius: 2px;
+  margin-top: 3vh;
+  background-color: rgb(216, 194, 146);
+  transition-property: background-color, margin;
+  transition: background-color 0.1s ease-in-out, margin 0.1s ease-in-out;
+  animation: 1s fadeIn;
+  animation-fill-mode: forwards;
+  visibility: hidden;
+}
+
+.scoreboard {
+  display: grid;
+  font: 600 200% / 1 "Nunito", sans-serif;
+  outline: none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3vh;
+  margin-bottom: 7vh;
+}
+
+.board-wrapper {
+  display: grid;
+  grid-template-columns: minmax(100vw, 1fr);
+  align-items: center;
+  justify-content: center;
+}
+
+.board {
+  display: grid;
+  grid-template: repeat(3, calc(100% / 3)) / repeat(3, calc(100% / 3));
+  gap: 0.4em;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  width: 420px;
+  height: 420px;
+  margin: 0 auto;
+  background-color: rgb(181, 56, 28);
+  border: 0.3em solid rgb(181, 56, 28);
+  border-radius: 2px;
+}
+
+[id^="Cell"] {
+  font: 600 700% / 1 "Nunito", sans-serif;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  border-radius: 2px;
+  background-color: rgb(216, 194, 146);
+  transition-property: background-color, margin;
+  transition: background-color 0.1s ease-in-out, margin 0.1s ease-in-out;
+}
+
+[id^="Cell"]:hover {
+  background-color: rgba(216, 194, 146, 0.8);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+#Line {
+  position: relative;
+  outline: none;
+  width: 100%;
+  background: black;
+}
